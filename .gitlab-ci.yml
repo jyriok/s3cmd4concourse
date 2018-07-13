@@ -10,7 +10,12 @@ Merge:
   image: sfy-search-registry-build.artifactory.packages.install-os.multis.p.fti.net/build/docker
   script:
     - git clone --single-branch -b stemcell4cs-3586.x https://github.com/jyriok/bosh-linux-stemcell-builder
-    - cd bosh-linux-stemcell-builder/ci/docker
-    - sudo ./run os-image-stemcell-builder
+    - cd bosh-linux-stemcell-builder
+    - git remote add stemcell https://github.com/cloudfoundry/bosh-linux-stemcell-builder.git
+    - git fetch --all
+    - git branch -a
+    - git checkout remotes/origin/stemcell4cs-3586.x
+    - git merge remotes/stemcell/3586.x
+
 
 
