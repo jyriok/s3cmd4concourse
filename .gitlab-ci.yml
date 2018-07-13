@@ -5,9 +5,12 @@ stages:
   - build
   - deploy
 
-build-doc:
+Merge:
   stage: build
   image: sfy-search-registry-build.artifactory.packages.install-os.multis.p.fti.net/build/docker
   script:
-    - uname -a
+    - git clone --single-branch -b stemcell4cs-3586.x https://github.com/jyriok/bosh-linux-stemcell-builder
+    - cd bosh-linux-stemcell-builder/ci/docker
+    - sudo ./run os-image-stemcell-builder
+
 
