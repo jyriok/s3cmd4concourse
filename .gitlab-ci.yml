@@ -7,7 +7,7 @@ stages:
 
 Merge:
   stage: build
-  image: sfy-search-registry-build.artifactory.packages.install-os.multis.p.fti.net/build/docker
+  image: sfy-search-registry-build.artifactory.packages.install-os.multis.p.fti.net/build/docker:dind
   script:
     - git config --global user.email "bot@dev.null"
     - git config --global user.name "BOT4stemcells"
@@ -17,7 +17,11 @@ Merge:
     - git fetch --all
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
-    - git merge remotes/stemcell/3586.x
+    #- git merge remotes/stemcell/3586.x
+    - cd ci/docker
+    - sudo ./run os-image-stemcell-builder 
+
+
 
 
 
