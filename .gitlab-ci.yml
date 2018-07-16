@@ -19,7 +19,7 @@ Merge:
     - git checkout remotes/origin/stemcell4cs-3586.x
     #- git merge remotes/stemcell/3586.x
     - cd ci/docker
-    - sudo ./run os-image-stemcell-builder 
+    - sudo docker run --privileged -v "$DIR/../..:/opt/bosh" --workdir /opt/bosh $USER_OPTION "$DOCKER_IMAGE"
 
 
 
