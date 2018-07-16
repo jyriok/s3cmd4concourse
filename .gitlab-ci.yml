@@ -3,7 +3,7 @@ variables:
 
 stages:
   - build
-  - deploy
+#  - deploy
 
 Merge:
   stage: build
