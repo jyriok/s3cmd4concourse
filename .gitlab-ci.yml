@@ -17,7 +17,7 @@ Merge:
     - git fetch --all
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
-    - git merge --strategy-option=patience remotes/stemcell/3586.x
+    - git merge -s patience remotes/stemcell/3586.x
     #- cd ci/docker
     #- DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
     #- docker exec $DOCKERID bash -c "sudo /opt/rubies/ruby-2.3.1/bin/gem install bundle ; /opt/rubies/ruby-2.3.1/bin/bundle install --local ; /opt/rubies/ruby-2.3.1/bin/bundle exec /opt/rubies/ruby-2.3.1/bin/rake stemcell:build_with_local_os_image[cloudstack,xen,ubuntu,trusty,$PWD/tmp/ubuntu_base_image.tgz,"3586.25"]"
