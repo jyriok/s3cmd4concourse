@@ -2,7 +2,7 @@ variables:
   GIT_STRATEGY: clone
 
 before_script:
-    - apt-get update && apt-get install kdiff3
+    - apt-get update && apt-get install kdiff3 --force-yes
 
 stages:
   - build
