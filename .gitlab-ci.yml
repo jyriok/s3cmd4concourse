@@ -14,7 +14,7 @@ Merge:
   script:
     - git config --global user.email "bot@dev.null"
     - git config --global user.name "BOT4stemcells"
-    - git config --global merge.conflictstyle diff3
+    - git config --global --add merge.tool kdiff3
     - git clone --single-branch -b stemcell4cs-3586.x https://github.com/jyriok/bosh-linux-stemcell-builder
     - cd bosh-linux-stemcell-builder
     - git remote add stemcell https://github.com/cloudfoundry/bosh-linux-stemcell-builder.git
