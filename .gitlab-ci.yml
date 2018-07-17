@@ -18,7 +18,7 @@ Merge:
     - git fetch --all
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
-    - git merge -s patience remotes/stemcell/3586.x
+    - git merge remotes/stemcell/3586.x
 
     #- cd ci/docker
     #- DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
