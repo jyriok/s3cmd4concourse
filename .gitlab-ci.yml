@@ -23,7 +23,7 @@ Merge:
     - git checkout remotes/origin/stemcell4cs-3586.x
     - git merge remotes/stemcell/3586.x || true
     - git diff
-    - git --abort
+    - git merge --abort
     # mode bourrin
     - git merge --no-commit -Xours remotes/stemcell/3586.x || true
     #- cd ci/docker
