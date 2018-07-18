@@ -15,13 +15,13 @@ Merge:
     - git config --global user.email "bot@dev.null"
     - git config --global user.name "BOT4stemcells"
     - git config --global --add merge.tool kdiff3
-    - git clone --single-branch -b stemcell4cs-3586.x https://github.com/jyriok/bosh-linux-stemcell-builder
+    - git clone --single-branch -b stemcell4cs-3586.x https://github.com/orange-cloudfoundry/bosh-linux-stemcell-builder
     - cd bosh-linux-stemcell-builder
     - git remote add stemcell https://github.com/cloudfoundry/bosh-linux-stemcell-builder.git
     - git fetch --all
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
-    - git merge remotes/stemcell/3586.x
+    - git merge remotes/stemcell/3586.x || true
     - git mergetool --tool kdiff3 -y --no-prompt
     #- cd ci/docker
     #- DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
