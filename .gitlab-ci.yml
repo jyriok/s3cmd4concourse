@@ -2,7 +2,7 @@ variables:
   GIT_STRATEGY: clone
 
 before_script:
-    - apt-get update && apt-get install -y -qq kdiff3
+    #- apt-get update && apt-get install -y -qq kdiff3
 
 stages:
   - build
@@ -22,11 +22,10 @@ Merge:
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
     - git merge remotes/stemcell/3586.x || true
-    - kdiff3 -v 
-    - git --version
     - git diff
-    - git status
-    - sudo git mergetool --tool kdiff3 -y --no-prompt
+    - git --abort
+    # mode bourrin
+    - git merge --no-commit -Xours remotes/stemcell/3586.x || true
     #- cd ci/docker
     #- DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
     #- docker exec $DOCKERID bash -c " \
