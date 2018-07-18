@@ -22,6 +22,10 @@ Merge:
     - git branch -a
     - git checkout remotes/origin/stemcell4cs-3586.x
     - git merge remotes/stemcell/3586.x || true
+    - kdiff3 -v 
+    - git --version
+    - git diff
+    - git status
     - git mergetool --tool kdiff3 -y --no-prompt
     #- cd ci/docker
     #- DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
