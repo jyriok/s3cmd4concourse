@@ -27,8 +27,8 @@ Merge:
     # mode bourrin
     - git merge --no-commit -Xours remotes/stemcell/3586.x || true
     - cd ci/docker
-    - DOCKERID=$(sudo docker run --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a)
-    - docker exec $DOCKERID uname -a
+    - sudo docker run --name=buildmachine --rm --privileged -v "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../..:/opt/bosh" --workdir /opt/bosh --user ubuntu -dt bosh/os-image-stemcell-builder uname -a
+    - docker exec buildmachine uname -a
     #- docker exec $DOCKERID bash -c " \
     #  PATH=/home/ubuntu/.gem/ruby/2.3.1/bin:/opt/rubies/ruby-2.3.1/lib/ruby/gems/2.3.0/bin:/opt/rubies/ruby-2.3.1/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin; \
     #  sudo gem install bundle ; \
