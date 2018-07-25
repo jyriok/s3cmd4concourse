@@ -5,4 +5,4 @@ inputs:
 - name: stemcell4cs
 - name: published-stemcell
 run:
-path: stemcell4cs/ci/pipelines/stemcells/tasks/make-stemcell-version.sh
+  path: stemcell4cs/ci/pipelines/stemcells/tasks/make-stemcell-version.sh  
